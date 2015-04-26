@@ -3,22 +3,32 @@
 <head>
   <meta charset="utf-8">
   <title>Breakout</title>
+  <style>
+    #breakout-canvas {
+      display: block;
+      margin: auto;
+    }
+  </style>
 </head>
 <body>
   <canvas id="breakout-canvas"></canvas>
 
   <script type="application/javascript" src="lib/util.js"></script>
+  <script type="application/javascript" src="lib/game.js"></script>
   <script type="application/javascript" src="lib/movingObject.js"></script>
   <script type="application/javascript" src="lib/paddle.js"></script>
   <script type="application/javascript" src="lib/ball.js"></script>
   <script type="application/javascript" src="lib/brick.js"></script>
-  <script type="application/javascript" src="lib/game.js"></script>
 
   <script type="application/javascript">
-    var canvas = document.getElementById("breakout-canvas");
-    canvas.width = 800;
-    canvas.height = 600;
-    var ctx = canvas.getContext("2d");
+    (function () {
+      var canvas = document.getElementById("breakout-canvas");
+      canvas.width = Breakout.Game.WIDTH;
+      canvas.height = Breakout.Game.HEIGHT;
+      var ctx = canvas.getContext("2d");
+
+      var game = new Breakout.Game(ctx);
+    })();
   </script>
 </body>
 </html>
