@@ -9,11 +9,42 @@
       margin: auto;
       border: 1px solid black;
     }
+
+    div.info {
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+    }
+
+    div.info > div {
+      padding: 5px;
+    }
+
+    div#controls {
+      float: left;
+    }
+
+    div.scoreboard {
+      float: right;
+      text-align: right;
+    }
+
+    div.clearfix {
+      clear: both;
+    }
   </style>
 </head>
 <body>
-  <div class="directions">
-    start/pause: SPACE
+  <div class="info">
+    <div id="controls">
+      <strong>SPACE</strong> to start/pause the game <br>
+      <strong>Left and Right arrow keys</strong> to move the paddle
+    </div>
+    <div class="scoreboard">
+      <div id="score"></div>
+      <div id="level"></div>
+    </div>
+    <div class="clearfix"></div>
   </div>
   <canvas id="breakout-canvas"></canvas>
 
