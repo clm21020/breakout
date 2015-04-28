@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <title>Breakout</title>
   <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif
+    }
+
     #breakout-canvas {
       display: block;
       margin: auto;
@@ -14,14 +18,23 @@
       max-width: 800px;
       margin: auto;
       position: relative;
+      text-align: center;
+      font-weight: 600;
     }
 
-    div.info > div {
+    div.info > div:not(.clearfix) {
+      width: 200px;
       padding: 5px;
+      display: inline-block;
+    }
+
+    div#level {
+      font-size: 20px;
     }
 
     div#controls {
       float: left;
+      text-align: left;
     }
 
     div.scoreboard {
@@ -37,12 +50,13 @@
 <body>
   <div class="info">
     <div id="controls">
-      <strong>SPACE</strong> to start/pause the game <br>
-      <strong>Left and Right arrow keys</strong> to move the paddle
+      Start/Pause: SPACE<br>
+      Move Paddle: L+R Arrows
     </div>
+    <div id="level">Level<br><span id="level-num"></span></div>
     <div class="scoreboard">
       <div id="score"></div>
-      <div id="level"></div>
+      <div id="lives-left"></div>
     </div>
     <div class="clearfix"></div>
   </div>
