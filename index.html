@@ -4,8 +4,12 @@
   <meta charset="utf-8">
   <title>Breakout</title>
   <style>
+    body {
+      background-color: LightCyan;
+    }
+
     * {
-      font-family: Arial, Helvetica, sans-serif
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     #breakout-canvas {
@@ -71,12 +75,17 @@
 
   <script type="application/javascript">
     (function () {
-      var canvas = document.getElementById("breakout-canvas");
-      canvas.width = Breakout.Game.WIDTH;
-      canvas.height = Breakout.Game.HEIGHT;
-      var ctx = canvas.getContext("2d");
+      var img = new Image();
 
-      var game = new Breakout.Game(ctx);
+      img.onload = function() {
+        var canvas = document.getElementById("breakout-canvas");
+        canvas.width = Breakout.Game.WIDTH;
+        canvas.height = Breakout.Game.HEIGHT;
+        var ctx = canvas.getContext("2d");
+        var game = new Breakout.Game(ctx, img);
+      };
+
+      img.src = 'palm_trees.jpg';
     })();
   </script>
 </body>
